@@ -21,7 +21,7 @@
 1 介绍本文档完整地定义了Google公司使用java™语言编写源代码时所采用的编码规范。当且仅当java源文件遵循本规范时，我们才说它是符合Google风格的。
 同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的硬性规定（hard-and-fas">
   
-    <link rel="alternative" href="/atom.xml" title="花花侠的IT世界" type="application/atom+xml">
+    <link rel="alternative" href="/hexo/atom.xml" title="花花侠的IT世界" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,7 +36,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img lazy-src="" class="js-avatar">
+			<img lazy-src="http://tp4.sinaimg.cn/1168427155/180/5725718049/1" class="js-avatar">
 		</a>
 
 		<hgroup>
@@ -97,18 +97,18 @@
 						
 							<li><a href="/">主页</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="/hexo/archives">所有文章</a></li>
 				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="/hexo/#" title="github">github</a>
+								<a class="github" target="_blank" href="http://www.github.com/lizhe2004#" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/hexo/#" title="weibo">weibo</a>
+								<a class="weibo" target="_blank" href="http://weibo.com/lizhe2004#" title="weibo">weibo</a>
 					        
-								<a class="rss" target="_blank" href="/hexo/#" title="rss">rss</a>
+								<a class="rss" target="_blank" href="/hexo/atom.xml" title="rss">rss</a>
 					        
 								<a class="zhihu" target="_blank" href="/hexo/#" title="zhihu">zhihu</a>
 					        
@@ -148,7 +148,7 @@
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+					<div id="js-aboutme">软件工程师 目前就职于联想负责X86服务器的软件产品的开发的工作，曾任职于ZTE、IBM，翻译有《RESTful Web APIs中文版》一书。喜欢研究新技术、关注科技发展动向，对架构设计、敏捷开发、自动化测试、IT项目管理都有很高的兴趣。。技术涉及领域：python、php、java、js（dojo）、css、html…</div>
 				</section>
 				
 			</div>
@@ -165,7 +165,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img lazy-src="" class="js-avatar">
+				<img lazy-src="http://tp4.sinaimg.cn/1168427155/180/5725718049/1" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">李哲</h1>
@@ -178,7 +178,7 @@
 				
 					<li><a href="/">主页</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="/hexo/archives">所有文章</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -186,11 +186,11 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/hexo/#" title="github">github</a>
+						<a class="github" target="_blank" href="http://www.github.com/lizhe2004#" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/hexo/#" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="http://weibo.com/lizhe2004#" title="weibo">weibo</a>
 			        
-						<a class="rss" target="_blank" href="/hexo/#" title="rss">rss</a>
+						<a class="rss" target="_blank" href="/hexo/atom.xml" title="rss">rss</a>
 			        
 						<a class="zhihu" target="_blank" href="/hexo/#" title="zhihu">zhihu</a>
 			        
@@ -234,7 +234,7 @@
       
         <h1 id="Google_Java编码规范中文版">Google Java编码规范中文版</h1><p>[TOC]</p>
 <h2 id="1_介绍">1 介绍</h2><p>本文档<strong>完整</strong>地定义了Google公司使用java™语言编写源代码时所采用的编码规范。当且仅当java源文件遵循本规范时，我们才说它是符合Google风格的。</p>
-<p>同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的<strong>硬性规定</strong>（<strong>hard-and-fast rules</strong>），并且避免提出一些有争议不是很确定是否可以强制实施的建议(不论是由人还是工具来实施)。</p>
+<p>同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的<strong>硬性规定</strong>（<strong>hard-and-fast rules</strong>），并且避免提出一些有争议不是很确定是否可以强制实施的建议(不论是由人还是工具来实施)。<br><a id="more"></a></p>
 <h3 id="1-1_术语说明">1.1 术语说明</h3><p>在本文档中，除非另外声明：</p>
 <p>单词class “类”用于表示的内容包括一个“普通”类、enum枚举类、接口或者注解类型（<code>@interface</code>）。<br>词语comment指的是实现注释（implementation comments）。我们并不使用”文档注释（documentation comments）”一词，而是使用另一个常用的术语“Javadoc”来代替。<br>其他“术语说明”将会在本文档中其他地方出现。</p>
 <h3 id="1-2_指南说明">1.2 指南说明</h3><p>本文档中的实例代码并不是标准。这就是说，尽管这些例子是符合Google风格的，但是它们并不能说明这是展示代码的唯一方式。不能将例子中所选择的那些格式化样式作为规则进行强制实施，它们只是可选的样式而已。</p>
@@ -440,11 +440,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/hexo/2015/05/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <strong class="article-nav-caption">></strong>
+    <a href="/hexo/2015/05/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -475,7 +479,7 @@
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
+	var duoshuoQuery = {short_name:"lizhe-git"};
 	(function() {
 		var ds = document.createElement('script');
 		ds.type = 'text/javascript';ds.async = true;

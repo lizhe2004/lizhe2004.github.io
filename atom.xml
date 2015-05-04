@@ -4,7 +4,7 @@
   <subtitle><![CDATA[花花侠的Git Page]]></subtitle>
   <link href="/hexo/atom.xml" rel="self"/>
   <link href="http://blog.huahuaxia.net/hexo/"/>
-  <updated>2015-05-04T01:39:20.000Z</updated>
+  <updated>2015-05-02T13:12:07.000Z</updated>
   <id>http://blog.huahuaxia.net/hexo/</id>
   
   <author>
@@ -15,14 +15,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://blog.huahuaxia.net/hexo/2015/05/04/hello-world/"/>
+    <id>http://blog.huahuaxia.net/hexo/2015/05/04/hello-world/</id>
+    <published>2015-05-04T04:27:48.000Z</published>
+    <updated>2015-05-02T13:12:07.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Google所采用的Java编码规范（中文版）]]></title>
     <link href="http://blog.huahuaxia.net/hexo/2015/05/02/google-java-code-style/"/>
     <id>http://blog.huahuaxia.net/hexo/2015/05/02/google-java-code-style/</id>
     <published>2015-05-02T13:31:00.000Z</published>
-    <updated>2015-05-04T01:39:20.000Z</updated>
+    <updated>2015-05-04T05:38:34.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Google_Java编码规范中文版">Google Java编码规范中文版</h1><p>[TOC]</p>
 <h2 id="1_介绍">1 介绍</h2><p>本文档<strong>完整</strong>地定义了Google公司使用java™语言编写源代码时所采用的编码规范。当且仅当java源文件遵循本规范时，我们才说它是符合Google风格的。</p>
-<p>同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的<strong>硬性规定</strong>（<strong>hard-and-fast rules</strong>），并且避免提出一些有争议不是很确定是否可以强制实施的建议(不论是由人还是工具来实施)。</p>
+<p>同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的<strong>硬性规定</strong>（<strong>hard-and-fast rules</strong>），并且避免提出一些有争议不是很确定是否可以强制实施的建议(不论是由人还是工具来实施)。<br><a id="more"></a></p>
 <h3 id="1-1_术语说明">1.1 术语说明</h3><p>在本文档中，除非另外声明：</p>
 <p>单词class “类”用于表示的内容包括一个“普通”类、enum枚举类、接口或者注解类型（<code>@interface</code>）。<br>词语comment指的是实现注释（implementation comments）。我们并不使用”文档注释（documentation comments）”一词，而是使用另一个常用的术语“Javadoc”来代替。<br>其他“术语说明”将会在本文档中其他地方出现。</p>
 <h3 id="1-2_指南说明">1.2 指南说明</h3><p>本文档中的实例代码并不是标准。这就是说，尽管这些例子是符合Google风格的，但是它们并不能说明这是展示代码的唯一方式。不能将例子中所选择的那些格式化样式作为规则进行强制实施，它们只是可选的样式而已。</p>
@@ -222,29 +244,9 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="Google_Java编码规范中文版">Google Java编码规范中文版</h1><p>[TOC]</p>
-<h2 id="1_介绍">1 介绍</h2><p>本文档<strong>完整</strong>地定义了Google公司使用java™语言编写源代码时所]]>
-    </summary>
+<h2 id="1_介绍">1 介绍</h2><p>本文档<strong>完整</strong>地定义了Google公司使用java™语言编写源代码时所采用的编码规范。当且仅当java源文件遵循本规范时，我们才说它是符合Google风格的。</p>
+<p>同其他编码风格指南一样，我们所讨论的内容不仅仅包括编码格式美观与否的问题，还囊括了其他类型的惯例约定或编码规范。然而，本文主要集中介绍的是我们所普遍遵循的<strong>硬性规定</strong>（<strong>hard-and-fast rules</strong>），并且避免提出一些有争议不是很确定是否可以强制实施的建议(不论是由人还是工具来实施)。<br>]]>
     
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://blog.huahuaxia.net/hexo/2015/05/02/hello-world/"/>
-    <id>http://blog.huahuaxia.net/hexo/2015/05/02/hello-world/</id>
-    <published>2015-05-02T13:12:07.000Z</published>
-    <updated>2015-05-02T13:12:07.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
     </summary>
     
   </entry>
