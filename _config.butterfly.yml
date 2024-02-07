@@ -1,0 +1,6 @@
+footer:
+  owner:
+    enable: true
+    since: 2024
+  custom_text: <img src="https://haiyong.site/img/icp.png"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:black" target="_blank">沪ICP备15005541号-1</a>
+  copyright: true
