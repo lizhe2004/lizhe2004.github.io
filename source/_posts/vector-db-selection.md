@@ -1,5 +1,7 @@
-# 您应该使用哪个向量数据库？选择最适合您需求的一款
-
+---
+title: 您应该使用哪个向量数据库？选择最适合您需求的一款
+toc: true
+---
 ## 介绍
 
 向量数据库已成为存储和索引非结构化和结构化数据表示（representation）的首选。这些表示称为向量嵌入（vector embedding），是由嵌入模型生成的。向量存储在那些利用深度学习模型（尤其是大型语言模型）的应用开发中发挥着至关重要的作用。
@@ -73,11 +75,8 @@ Weaviate 提供静态分片。如果Chroma不能在多个节点之间分配和�
 无论我们选择的精度阈值和指标如何，Qdrant 在几乎所有场景中都能实现最高的 RPS 和最低的延迟。它还显示其中一个数据集的 RPS 提高了 4 倍。
 
 对于许多使用场景来说，Elasticsearch 已经变得相当快，但在索引时间方面却非常慢。当存储 10M+ 96 维向量时，速度可能会慢 10 倍！ （32 分钟 vs 5.5 小时）
-Milvus is the fastest when it comes to indexing time and maintains good precision. However, it’s not on-par with the others when it comes to RPS or latency, when you have higher dimension embeddings or more numbers of vectors.
 Milvus 的索引时间是最快的，并且保持了良好的精度。然而，当您拥有更高维度的嵌入或更多数量的向量时，在 RPS 或延迟方面，它与其他数据库并不相当。
-Redis is able to achieve good RPS but mostly for lower precision. It also achieved low latency with a single thread; however its latency goes up quickly with more parallel requests. Part of this speed gain comes from its custom protocol.
 Redis 能够实现良好的 RPS，但主要是精度较低。它还通过单线程实现了低延迟；然而，随着并行请求的增加，其延迟会迅速增加。这种速度增益部分来自其自定义协议。
-Weaviate has improved the least over time. Because of relative improvements in other engines, it has become one of the slowest in terms of RPS as well as latency.
 随着时间的推移，Weaviate 的改进最少。由于其他引擎的相对改进，它已成为 RPS 和延迟方面最慢的引擎之一。
 | 向量数据库 | 设置 | 数据集| 上传时间（m）|上传时间+索引时间|P95(ms)|RPS|P99(ms)|延迟|精确度（Precision）|
 |---|---|---|---|---|---|---|---|---|---|
@@ -137,10 +136,20 @@ d_\infty = \max(|x_1 - x_2|, |y_1 - y_2|)
 ## 集成和API
 
 虽然 REST API 更常见，但 GRPC API 更关注于时延要求特别低的场景或需要快速移动大量数据时的性能和吞吐量。根据您的要求和网络，GRPC 可能比 REST 快几倍。
+| 向量数据库 | 语言SDK | REST API |GraphQL API | GRPC API|
+|---|---|---|---| ---|
+| Qdrant | Python,  Rust | 支持 | 不支持 | 支持 |
+| Pinecone | Python, TypeScript/JavaScript, Rust, Go | 支持 | 不支持 | 支持 |
+| Milvus | Python,Java，C++,Nodejs, Rust, Go,RESTful | 支持 | 不支持 | 支持 |
+| Chroma | Python,  | 支持 | 不支持 | 不支持 |
+| Weaviate | Python,Java，JavaScript,.NET| 支持 | 支持 | 支持 |
+| Faiss |  C++,Python | 不支持 | 不支持 | 不支持 |
+| Elasticsearch | Python, Java，PHP, Ruby,Perl，TypeScript/JavaScript, Rust, Go | 支持 | 不支持 | 不支持 |
 
 ## 社区与生态系统
 
 开源意味着我们可以浏览核心数据库的源代码，并且向量数据库具有灵活的许可模式。
+除了Pinecone以外，其他向量数据库都是开源的。能够得到社区支持，并与其他各种框架有集成方案。
 
 ## 价格
 | 向量数据库 | 免费层 | 按需付费 | 企业方案|

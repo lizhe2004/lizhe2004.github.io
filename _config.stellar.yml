@@ -11,11 +11,11 @@ style:
 menubar:
   columns: 4 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
-    # - id: post # 页面中高亮的 menu_id
-    #   theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
-    #   icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
-    #   title: 博客 # 标题
-    #   url: / # 跳转链接，支持相对路径和绝对路径
+    - id: post # 页面中高亮的 menu_id
+      theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+      icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
+      title: 博客 # 标题
+      url: / # 跳转链接，支持相对路径和绝对路径
     # - id: wiki
     #   theme: '#3DC550'
     #   icon: solar:notebook-bookmark-bold-duotone
@@ -42,14 +42,14 @@ search:
 footer:
   social:
     github:
-      icon: '<img src="/assets/placeholder/social/08a41b181ce68.svg"/>'
+      icon: '<img src="https://api.iconify.design/octicon:mark-github-24.svg"/>'
       url: https://
     music:
-      icon: '<img src="/assets/placeholder/social/3845874.svg"/>'
+      icon: '<img src="https://www.svgrepo.com/show/299491/weibo.svg"/>'
       url: https://
     unsplash:
-      icon: '<img src="/assets/placeholder/social/3616429.svg"/>'
+      icon: '<img src="https://www.svgrepo.com/show/349560/wechat.svg"/>'
       url: https://
     comments:
-      icon: '<img src="/assets/placeholder/social/942ebbf1a4b91.svg"/>'
+      icon: '<img src="" />'
       url: https://
