@@ -5,3 +5,4 @@ title: Hello 2024
 {% emoji 爱你 %}
 {% emoji blobcat ablobcatattentionreverse %}
 {% emoji tieba 滑稽 %}
+![Drawing 2024-05-09 16.30.28.excalidraw.svg]

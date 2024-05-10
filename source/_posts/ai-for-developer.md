@@ -9,7 +9,7 @@ reference: https://dzone.com/articles/empowering-developers-navigating-ai-revolu
 ## AI对开发人员工作的积极影响
 
 AI在自动化重复性任务方面表现出色，这包括代码生成、复杂的测试和部署过程。Jenkins 和 Azure DevOps 等工具简化了部署流程，提高了软件的可靠性和效率。AI驱动的集成开发环境（IDE）通过实时代码分析和错误检测，进一步提升了编码的精确性和速度。
-
+[[]]
 ## AI对开发人员工作的负面影响
 
 尽管AI有很多好处，但人们仍担心工作会被取代，。此外，
