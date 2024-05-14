@@ -200,7 +200,7 @@ endif
 run_step_generation_batch函数的流程图
 输入是一个prompt 以及一个paragraphs数组
 输出：和paragraphs数组的内容相对应的三个数组，
-- preds: 根据每个检索到的段落对应生成的结果（包含反思标记）数组
+- preds: 根据每个检索到的段落由大模型对应生成的结果（包含反思标记）数组
 - scores：对生成结果根据各个反思标记的概率分布进行打分的数组, 
 - overall_scores；包含详细打分以及中间数据的数组
 {"final_score"、"relevance_score"、"ground_score"、"utility_score"、"relevance_score_dict"、 "grd_score_dict"、"ut_score_dict"}
@@ -355,6 +355,70 @@ print([pred.outputs[0].text for pred in preds])
 ```
 
 ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240511105258.png)
+
+
+
+参考实现：
+[原始实现代码](https://github.com/AkariAsai/self-rag)
+[langchain版Self-RAG](https://github.com/AkariAsai/self-rag)
+[llamaindex版Self-RAG](https://github.com/run-llama/llama_index/tree/v0.10.20/llama-index-packs/llama-index-packs-self-rag)
+
+```python
+import os  
+os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY"  
+  
+from llama_index.core import Document, VectorStoreIndex  
+from llama_index.core.retrievers import VectorIndexRetriever  
+from llama_index.core.readers import SimpleDirectoryReader  
+from pathlib import Path  
+  
+  
+# Option: download SelfRAGPack  
+# The first execution requires the download of SelfRAGPack.  
+# Subsequent executions can comment this out.  
+from llama_index.core.llama_pack import download_llama_pack  
+download_llama_pack(  
+"SelfRAGPack",  
+"./self_rag_pack")  
+  
+from llama_index.packs.self_rag import SelfRAGQueryEngine  
+  
+# The directory where the Llama2 model was previously downloaded and saved.  
+download_dir = "YOUR_DOWNLOAD_MODEL_DIR"  
+  
+# Create testing documents  
+documents = [  
+Document(  
+text="A group of penguins, known as a 'waddle' on land, shuffled across the Antarctic ice, their tuxedo-like plumage standing out against the snow."  
+),  
+Document(  
+text="Emperor penguins, the tallest of all penguin species, can dive deeper than any other bird, reaching depths of over 500 meters."  
+),  
+#...若干用于被检索的文档省略
+]  
+  
+index = VectorStoreIndex.from_documents(documents)  
+  
+# Setup a simple retriever  
+retriever = VectorIndexRetriever(  
+index=index,  
+similarity_top_k=10,  
+)  
+  
+  
+model_path = Path(download_dir) / "selfrag_llama2_7b.q4_k_m.gguf"  
+query_engine = SelfRAGQueryEngine(str(model_path), retriever, verbose=True)  
+  
+# No retreival example  
+response = query_engine.query("Which genre the book pride and prejudice?")  
+  
+# Retreival example  
+response = query_engine.query("How tall is the smallest penguins?")
+```
+
+所以其中的重点是 `SelfRAGQueryEngine` 这个自定义类的`query`方法的实现逻辑
+
+
 
 参考文档
 [知乎上self-rag的文章](https://zhuanlan.zhihu.com/p/663814320)
