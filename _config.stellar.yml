@@ -53,3 +53,8 @@ footer:
     comments:
       icon: '<img src="" />'
       url: https://
+article:
+  # npm i hexo-related-popular-posts
+  related_posts:
+    enable: true
+    title: 您可能感兴趣的文章

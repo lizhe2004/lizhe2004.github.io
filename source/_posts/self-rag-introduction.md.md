@@ -1,7 +1,28 @@
 ---
-title: 一篇文章让你了解Self-RAG框架的原理和内部：通过自我反思和评估来更精准地检索和文本生成
+title: 高级RAG之Self-RAG框架的原理和内部实现
 toc: true
+date: 2024-05-10
+tags:
+  - Self-RAG
+  - 大模型
+  - RAG
+  - 检索增强生成
+categories:
+  - 人工智能
+description: 一篇文章让你了解Self-RAG框架的原理和内部,通过自我反思和评估来更精准地检索和文本生成
+banner: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240510141136.png
+cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240510141136.png
+author: 李大侠
+breadcrumb: true
+leftbar:
+  - recent
+  - related
+  - tagcloud
+rightbar:
+  - ghuser
+  - toc
 ---
+
 
 论文链接：[https://arxiv.org/abs/2310.11511](https://arxiv.org/abs/2310.11511)
 
@@ -24,6 +45,15 @@ toc: true
 ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240510141136.png)
 图1 
 
+
+
+以参加开卷考试为例，我们通常有两种策略：
+
+- 方法1：对于熟悉的题目，快速作答；对于不熟悉的题目，打开参考书查找，快速找到相关部分，在脑海中进行分类、归纳，然后在试卷上作答。
+- 方法 2：每个题目都要参考书目。找到相关章节，在头脑中进行整理和归纳，然后在试卷上写下你的答案。
+
+显然，方法 1 是首选方法。方法 2 可能会耗费时间，并有可能引入不相关或错误的信息，这可能会导致混乱和错误，甚至是在你原本理解的领域。方法 2 体现了传统的 RAG 过程，而方法 1 则代表了Self-RAG 过程。
+
 具体来说，在每个片段（如句子），Self-RAG 可以：
 
 - 检索（Retrieve）：Self-RAG 首先解码出一个检索标记（**retrieval token**），以评估检索的有效性（对于后续内容生成，检索是否有帮助）。如果需要检索，LM 会调用外部检索模块，利用输入查询和上一次生成的信息，查找最相关的文档。
@@ -35,12 +65,12 @@ toc: true
 形式上，给定输入x 后，我们训练 ℳ 依次生成由多个片段 y=[y<sub>1</sub>,…,y<sub>T</sub>] 组成的文本输出 y ，其中 ,y<sub>T</sub> 表示第T个片段的标记序列。 一个片段一般对应一个句子。
 下面列出的是在训练过程中用到的几种不同类型的反思标记（**reflection token）。
 
-| 标记类型     | 输入    | 输出                                                        | 定义                                                                        |
-| -------- | ----- | --------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Retrieve | xlx,y | yes,   no,   continue                                     | 根据输入的问题x 或者问题x以及前面生成的内容y <br>决定是否使用检索器R来进行检索 <br>**continue**的值表示模型可以继续使用之前检索到的证据 |
-| ISREL    | x,d   | **relevant**,irrelevant                                | 检索到的文档d是否提供了有助于解决问题x的有关信息                                                 |
-| ISSUP    | x,d,y | **fully supported**, partially supported, no support | 生成的内容y中所有需要进一步核实的信息是否都在文档d中有相应的支持。                                        |
-| ISUSE    | x,y   | **5**, 4, 3, 2,1                                     | 对于问题x，生成的答复内容y是有用的回复                                                      |
+| 标记类型     | 输入    | 输出                                                   | 定义                                                                                |
+| -------- | ----- | ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Retrieve | xlx,y | yes,   no,   continue                                | 根据输入的问题x 或者问题x以及前面生成的内容y <br>决定是否使用检索器R来进行检索 <br>**continue**的值表示模型可以继续使用之前检索到的证据 |
+| ISREL    | x,d   | **relevant**,irrelevant                              | 检索到的文档d是否提供了有助于解决问题x的有关信息                                                         |
+| ISSUP    | x,d,y | **fully supported**, partially supported, no support | 生成的内容y中所有需要进一步核实的信息是否都在文档d中有相应的支持。                                                |
+| ISUSE    | x,y   | **5**, 4, 3, 2,1                                     | 对于问题x，生成的答复内容y是有用的回复                                                              |
 
 Self-RAG中共有4种反思标记（reflection token），大致分为Retrieve和Critique两大类。其中Critique标记又分为IsREL、IsSUP、IsUSE三小类，其中粗体表示某类token最期望的取值。
 
@@ -361,6 +391,9 @@ print([pred.outputs[0].text for pred in preds])
 参考实现：
 [原始实现代码](https://github.com/AkariAsai/self-rag)
 [langchain版Self-RAG](https://github.com/AkariAsai/self-rag)
+该代码只是参考了Self-RAG的一些思想（Retrive节点检索文档后由Grade节点进行打分判断是否相关，利用相关文档通过Generate节点生成结果然后利用大模型检测参考文档是否支持生成的结果（也就是是否有幻觉（Hallucination））以及利用大模型检查生成结果是否回答了原始问题（Answers question）也就是是否有用），并不是严格的Self-RAG实现代码。
+这个实现也是体现RAG Flow，体现 RAG 的 "流程工程（flow engineering） "的例子，包括特定的决策点（如文档分级）和循环（如重试检索）。
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240515135826.png)
 [llamaindex版Self-RAG](https://github.com/run-llama/llama_index/tree/v0.10.20/llama-index-packs/llama-index-packs-self-rag)
 
 ```python
@@ -423,3 +456,4 @@ response = query_engine.query("How tall is the smallest penguins?")
 参考文档
 [知乎上self-rag的文章](https://zhuanlan.zhihu.com/p/663814320)
 [Self-RAG资料集](https://ihower.tw/notes/AI-Engineer/RAG/Self-RAG)
+[Advanced RAG 08: Self-RAG](https://webcache.googleusercontent.com/search?q=cache:https%3A%2F%2Fai.gopubby.com%2Fadvanced-rag-08-self-rag-c0c5b5952e0e)
