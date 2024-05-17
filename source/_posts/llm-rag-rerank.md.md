@@ -2,13 +2,8 @@
 title: 高级RAG之Rerank重排序
 toc: true
 date: 2024-05-15
-tags:
-  - Rerank
-  - 大模型
-  - RAG
-  - 检索增强生成
-categories:
-  - 人工智能
+tags:[Rerank,大模型,RAG,检索增强生成,重排序,re-rank]
+categories: [人工智能,大模型]
 description: 一篇文章让你了解RAG应用的重排序最佳实践
 banner: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240515135124.png
 cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240515135124.png

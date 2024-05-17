@@ -2,13 +2,8 @@
 title: 高级RAG之Corrective-RAG框架的原理和内部实现
 toc: true
 date: 2024-05-14
-tags:
-  - Corrective-RAG
-  - 大模型
-  - RAG
-  - 检索增强生成
-categories:
-  - 人工智能
+tags: [Corrective-RAG,大模型,RAG,检索增强生成]
+categories: [人工智能]
 description: 一篇文章让你了解Corrective-RAG框架的原理和内部,通过自我反思和评估来更精准地检索和文本生成
 banner: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240515135124.png
 cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240515135124.png

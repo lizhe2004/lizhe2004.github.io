@@ -1,4 +1,23 @@
-为什么利用大型语言模型开发人工智能应用业务这么难？
+---
+title: 为什么利用大型语言模型开发人工智能应用业务这么难？
+toc: true
+date: 2024-05-9
+tags:[人工智能,大模型]
+categories: [人工智能]
+description: 为什么利用大型语言模型开发人工智能应用业务这么难？
+banner: 
+cover: 
+author: 李大侠
+breadcrumb: true
+leftbar:
+  - recent
+  - related
+  - tagcloud
+rightbar:
+  - ghuser
+  - toc
+---
+
 
  媒体对人工智能的炒作可能会让你在某一刻相信，人工智能已经非常先进，即将取代人类的所有工作，并准备统治世界。然而，这只是炒作而已。
 

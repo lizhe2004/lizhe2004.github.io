@@ -1,6 +1,21 @@
 ---
 title: 赋能开发人员：引领软件工程的AI革命
 reference: https://dzone.com/articles/empowering-developers-navigating-ai-revolution
+date: 2024-05-01
+tags: [人工智能, 开发人员]
+categories: [人工智能]
+description: 探讨AI如何深刻影响软件开发领域，并为开发人员在这一变革中如何适应和成功提供指导
+banner: 
+cover: 
+author: 李大侠
+breadcrumb: true
+leftbar:
+  - recent
+  - related
+  - tagcloud
+rightbar:
+  - ghuser
+  - toc
 ---
 赋能开发人员：引领软件工程的AI革命
 

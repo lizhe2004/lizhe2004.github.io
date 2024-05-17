@@ -1,6 +1,21 @@
 ---
 title: 您应该使用哪个向量数据库？选择最适合您需求的一款
 toc: true
+date: 2024-05-07
+tags: [向量数据库,embedding,大模型,RAG,检索增强生成]
+categories: [人工智能]
+description: 向量数据库已成为存储和索引非结构化和结构化数据表示（representation）的首选,如何做技术选型
+banner: 
+cover: 
+author: 李大侠
+breadcrumb: true
+leftbar:
+  - recent
+  - related
+  - tagcloud
+rightbar:
+  - ghuser
+  - toc
 ---
 ## 介绍
 
