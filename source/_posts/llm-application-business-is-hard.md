@@ -2,7 +2,7 @@
 title: 为什么利用大型语言模型开发人工智能应用业务这么难？
 toc: true
 date: 2024-05-9
-tags:[人工智能,大模型]
+tags: [人工智能,大模型]
 categories: [人工智能]
 description: 为什么利用大型语言模型开发人工智能应用业务这么难？
 banner: 
