@@ -53,8 +53,8 @@ rightbar:
 
 - 评估（**Critique**）：如果需要检索，模型会进一步评估段落内容是否支持生成的结果。此外，在最后还会生成一个新的评估标记（ **critique token**）来评估回复的整体效用和水平。
 
-形式上，给定输入x 后，我们训练 ℳ 依次生成由多个片段 y=[y<sub>1</sub>,…,y<sub>T</sub>] 组成的文本输出 y ，其中 ,y<sub>T</sub> 表示第T个片段的标记序列。 一个片段一般对应一个句子。
-下面列出的是在训练过程中用到的几种不同类型的反思标记（**reflection token）。
+形式上，给定输入x 后，我们训练 ℳ 依次生成由多个片段 y=[y<sub>1</sub>,…,y<sub>T</sub>] 组成的文本输出 y ，其中 ,y<sub>T</sub> 表示第T个片段的标记序列。 一个片段一般对应一个句子。这与之前的大模型并没有本质的区别。
+下面列出的是在训练和推理过程中用到的几种不同类型的反思标记（**reflection token**）。
 
 | 标记类型     | 输入    | 输出                                                   | 定义                                                                                |
 | -------- | ----- | ---------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ rightbar:
 | ISSUP    | x,d,y | **fully supported**, partially supported, no support | 生成的内容y中所有需要进一步核实的信息是否都在文档d中有相应的支持。                                                |
 | ISUSE    | x,y   | **5**, 4, 3, 2,1                                     | 对于问题x，生成的答复内容y是有用的回复                                                              |
 
-Self-RAG中共有4种反思标记（reflection token），大致分为Retrieve和Critique两大类。其中Critique标记又分为IsREL、IsSUP、IsUSE三小类，其中粗体表示某类token最期望的取值。
+Self-RAG中共有4种反思标记（reflection token），大致分为**Retrieve**和**Critique**两大类。其中**Critique**标记又分为**IsREL**、**IsSUP**、**IsUSE**三小类，其中粗体表示某类token最期望的取值。
 
 ### Self-RAG 有多厉害？
 
@@ -101,17 +101,30 @@ stop
 算法1 
 图 1 和算法 1 展示了推理中的 Self-Rag 概述。
 
-对于每一个 x和 已经生成的内容y<sub>&lt;t</sub> ,模型都会解码一个检索标记(retrieval token)，以评估检索的有效性。如果不需要检索，模型就会像标准 LM 那样预测下一个输出片段。如果需要检索，模型就会生成：1、一个评论标记来评估检索段落的相关性、2、下一个响应片段，以及3、一个评论标记来评估响应片段中的信息是否得到所检索的段落的支持。最后，一个新的评论标记会评估回复的整体有效性。 
 
-为了生成每个片段，Self-Rag 会并行处理多个段落，并使用自己生成的反思标记（reflection token）对生成的任务输出执行宽松约束(soft constraints )或严格控制(hard control)（算法 1）。例如，在图 1（右图）中，由于 d<sub>2</sub> 没有提供直接证据（不相关），且 d<sub>3</sub> 的输出只有部分支持，而 d<sub>1</sub> 的输出则完全支持，因此在第一个时间步骤中选择了检索到的段落d<sub>1</sub> 。
+对于每一个 x和 已经生成的内容y<sub>&lt;t</sub> ,模型都会解码一个检索标记(retrieval token)，以评估检索的有效性。如果不需要检索，模型就会像标准 LM 那样预测下一个输出片段。如果需要检索，模型就会生成：
+- 1、一个评论标记来评估检索段落的相关性
+- 2、下一个响应片段
+- 3、一个评论标记来评估响应片段中的信息是否得到所检索的段落的支持。
+- 4、一个新的评论标记会评估回复的整体有效性。 
 
-通过生成反思标记（reflection token）来自我评估输出结果，Self-RAG可以在推理阶段进行控制，从而使其行为适应不同的任务要求。对于事实准确性要求高的任务，目标则是让模型更频繁地检索段落，以确保输出结果与现有证据密切吻合。相反，在开放性较强的任务中，如撰写个人经历文章，重点则转向减少检索次数，优先考虑整体创造性或实用性得分。
+为了生成输出片段，Self-Rag 会**并行处理检索到的段落**，并使用自己生成的反思标记（reflection token）对生成的任务输出执行宽松约束(soft constraints )或严格控制(hard control)（算法 1）。
+- 例如，在图 1（右图）中，由于 d<sub>2</sub> 与用户问题不相关，而 d<sub>3</sub> 的输出结果只能部分内容得到文档支持，而 d<sub>1</sub> 的输出结果是能得到文档完全支持的，因此在第一个时间步骤中选择了检索到的段落d<sub>1</sub> 。
 
-**带检索标记（ retrieval token）和阈值的的自适应检索**：先前的工作通常在生成过程中固定时间检索段落（例如，只在开始时检索，或者每隔 k 个令牌检索一次），难以在质量和效率之间取得平衡。在 Self-RAG 学习生成检索标记以灵活检索的同时，人们还可以利用检索标记的token概率，根据其软约束条件改变检索频率。
-带阈值的自适应检索。Self-Rag 通过预测检索标记（Retrive token）来动态决定何时检索文本段落。此外，该框架还允许设置阈值。具体来说，如果在所有Retrive输出标记中产生=Yes标记的概率超过了指定的阈值，我们就会触发检索。
+#### 带检索标记（ retrieval token）和阈值的的自适应检索
+
+先前的工作通常在生成过程中固定时间检索段落（例如，只在开始时检索，或者每隔 k 个令牌检索一次），难以在质量和效率之间取得平衡。在 Self-RAG 学习生成检索标记以灵活检索的同时，人们还可以利用检索标记的token概率，根据其软约束条件改变检索频率。
+
+**带阈值的自适应检索**
+Self-Rag 通过预测检索标记（Retrive token）来动态决定何时检索文本段落。此外，该框架还允许设置阈值。具体来说，如果在所有Retrive输出标记中产生=Yes标记的概率超过了指定的阈值，我们就会触发检索。
 ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240510162532.png)
 
-**带有评估标记（critique token）的树状解码**：Self-RAG 引入了多个细粒度的评估标记，对生成内容的质量从不同方面（如证据支持性、完整性）进行评估。我们使用理想评估标记概率的线性内插法进行分段级波束搜索( beam search)，以在每个时间段内确定 K 个最佳连续句。
+根据上述策略，Self-RAG可以在推理阶段进行检索控制，从而使其行为适应不同的任务要求。
+- 对于事实准确性要求高的任务，目标则是让模型更频繁地检索段落，以确保输出结果与现有证据密切吻合。
+- 在开放性较强的任务中，如撰写个人经历文章，重点则转向减少检索次数，优先考虑整体创造性或实用性得分。
+
+#### 带有评估标记（critique token）的树状解码 
+Self-RAG 引入了多个细粒度的评估标记，对生成内容的质量从不同方面（如证据支持性、完整性）进行评估。我们使用理想评估标记概率的线性内插法进行分段级波束搜索( beam search)，以在每个时间段内确定 K 个最佳连续句。
 
  在每个分段步骤 t 中，当需要根据严格条件或宽松条件（soft condition）进行检索时， ℛ 会检索K 个段落，生成器 ℳ 会并行处理每个段落，并输出K 个不同的候选后续片段。我们进行分段级波束搜索（beam search）（beam size=B ），以获得每个时间戳t的前B 段连续序列，并在生成结束时返回最佳序列。每个片段 y<sub>t</sub> 相对于段落d的得分会用评估者得分 𝒮 更新，该得分是每种标记类型的归一化概率的线性加权和。对于每个评估标记组 G （例如IsREL），我们将其在时间戳 t的得分记为 S<sub>t</sub><sup>G</sup> ，并按如下方式计算段落得分：
   
@@ -129,7 +142,7 @@ run_long_form_static.py 文件中 `call_model_beam_batch`函数的流程图
 	- "splitted_sentences": self-rag是一句一句生成的，所以是与final_prediction中的字符串记录合并前的大模型生成的结果,
 	- "original_splitted_sentences": 包含了原始的反思令牌信息的句子数组的数组,
 	- "best_selections": beam search后的自底向上的树的路径
-	- "ctxs": 生成句子所使用的检索段落信息,
+	- "ctxs": 生成句子所使用的检索段落信息
 	- "prediction_tree": beam search中的所有节点的信息
  
 
@@ -222,7 +235,7 @@ run_step_generation_batch函数的流程图
 输入是一个prompt 以及一个paragraphs数组
 输出：和paragraphs数组的内容相对应的三个数组，
 - preds: 根据每个检索到的段落由大模型对应生成的结果（包含反思标记）数组
-- scores：对生成结果根据各个反思标记的概率分布进行打分的数组, 
+- scores：对生成结果根据各个反思标记的概率分布进行打分的数组
 - overall_scores；包含详细打分以及中间数据的数组
 {"final_score"、"relevance_score"、"ground_score"、"utility_score"、"relevance_score_dict"、 "grd_score_dict"、"ut_score_dict"}
 
@@ -255,19 +268,73 @@ endwhile
 stop
 @enduml
 
-
 ```
+
+#### Self-RAG执行效果
+
+```python
+# Import necessary libraries  
+from vllm import LLM, SamplingParams  
+  
+# Initialize the LLM (Large Language Model) with the specified model and data type  
+model = LLM("selfrag/selfrag_llama2_7b", dtype="half")  
+  
+# Define sampling parameters for text generation  
+sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=100, skip_special_tokens=False)  
+  
+# Define a function to format prompts, including an instruction and an optional paragraph for retrieval  
+def format_prompt(input, paragraph=None):  
+prompt = "### Instruction:\n{0}\n\n### Response:\n".format(input)  
+if paragraph is not None:  
+prompt += "[Retrieval]<paragraph>{0}</paragraph>".format(paragraph)  
+return prompt  
+  
+# Define two queries for the model to generate responses for 
+# query1不需要检索，找到与其他内容不同的内容
+# query2需要检索 ，llamas和alpacas的区别
+query_1 = "Leave odd one out: twitter, instagram, whatsapp."  
+query_2 = "Can you tell me the difference between llamas and alpacas?"  
+queries = [query_1, query_2]  
+  
+# Generate responses for the queries  
+preds = model.generate([format_prompt(query) for query in queries], sampling_params)  
+  
+# Print the model's predictions for each query  
+for pred in preds:  
+print("\n\nModel prediction: {0}".format(pred.outputs[0].text))
+```
+执行结果如下：
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240511104954.png)
+执行了两个查询，在第一个查询中，Self-RAG 直接生成响应而不检索信息，因为这是不必要的。在第二个查询中，Self-RAG 显示 [Retrieve] 标记，因为问题需要更多事实信息。
+
+```python
+# 用户问题需要检索并将检索文档通过format_prompt添加到prompt中
+prompt = format_prompt("Can you tell me the difference between llamas and alpacas?", "The alpaca (Lama pacos) is a species of South American camelid mammal. It is similar to, and often confused with, the llama. Alpacas are considerably smaller than llamas, and unlike llamas, they were not bred to be working animals, but were bred specifically for their fiber.")
+preds = model.generate([prompt], sampling_params)
+print([pred.outputs[0].text for pred in preds])
+# ['[Relevant]Alpacas are considerably smaller than llamas, and unlike llamas, they were not bred to be working animals, but were bred specifically for their fiber.[Fully supported][Utility:5]</s>']
+```
+
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240511105258.png)
+
 
 ### 训练过程
 #### 训练概述
 Self-RAG可使一个LM 生成带有反思标记（reflection token）的文本，方法是扩展模型词汇（即原始词汇加上反思标记（reflection token）），并以标准的下一个token预测为任务目标进行训练。
 Self-RAG 训练包括两种模型：**Critic**和**Generator**。
-具体来说，在一个经过设计的语料库上训练生成器模型 ℳ ，该语料库中检索器 ℛ 检索到的段落和由评估模型 𝒞 预测的反思标记在语料中交替出现（参见后面的语料示例）。训练评估模型𝒞 生成反思标记，用于评估检索到的段落和给定任务输出的质量。利用评估模型𝒞，通过在离线任务输出中插入反思标记来更新训练语料库。随后，我们使用传统的 LM token预测作为任务目标来训练最终生成模型（ ℳ ），使 ℳ 能够在推理时不依赖评估模型而自行生成反思标记。
+具体来说，在一个经过设计的语料库上训练生成器模型 ℳ ，该语料库中检索器 ℛ 检索到的段落和由评估模型 𝒞 预测的反思标记在语料中交替出现（参见后面的语料示例）。
+我们先训练一个评估模型𝒞 生成反思标记，用于评估检索到的段落和给定任务输出的文本的质量。利用评估模型𝒞，通过在离线任务输出结果中插入反思标记来更新训练语料库。随后，我们使用传统的 LM token预测作为任务目标来训练最终生成模型（ ℳ ），使 ℳ 能够在推理时不依赖评估模型而自行生成反思标记。
 
 - 步骤 1 创建评估数据：通过提示 GPT-4 生成反思标记来生成 Critic 训练数据。
 - 步骤 2 Critic模型训练：在合成数据集上训练 Critic 模型。
 - 步骤 3 Generator数据创建：使用 Critic 和 Retriever 生成生成器训练数据。
 - 步骤 4 Generator模型训练：在 RAG 数据集上训练生成器，包括教授模型何时检索或不检索的特殊标记。
+
+##### 生成模型的训练语料示例
+
+>Input: Identify the two types of computer memory. (from gpt4_alpaca)
+Output:  [**==Retrieve==**=Yes] &lt;p&gt; Computer memory Computer memory – In computing, memory refers to the computer hardware integrated circuits that store information for immediate use in a computer; it is synonymous with the term “primary storage”. Computer memory operates at a high speed, for example random-access memory (RAM), as a distinction from storage that provides slow-to-access information but offers higher capacities. If needed, contents of the computer memory can be transferred to secondary storage; a very common way of doing this is through a memory management technique called “virtual memory”. An archaic synonym for memory is store. The term “memory”, meaning “primary storage” or “main memory”, is&lt;p&gt;[ **==IsREL==**=Relevant]Primary memory, also known as main memory, is the memory that the computer can directly access and manipulate. [**==IsSUP==**=Fully Supported]  [**==Retrieve==**=Yes]&lt;p&gt;Computer memory–often associated with addressable semiconductor memory, i.e. integrated circuits consisting of silicon-based transistors, used for example as primary storage but also other purposes in computers and other digital electronic devices. There are two main kinds of semiconductor memory, volatile and non-volatile. Examples of non-volatile memory are flash memory (used as secondary memory) and ROM, PROM, EPROM and EEPROM memory (used for storing firmware such as BIOS). Examples of volatile memory are primary storage, which is typically dynamic random-access memory (DRAM), and fast CPU cache memory, which is typically static random-access memory (SRAM) that is fast but energy-consuming, offering lower memory&lt;p&gt;[ **==IsREL==** =Relevant]Primary memory can be accessed quickly, but it is volatile, meaning that the data is lost if the power is turned off.[**==IsSUP==** =Partially Supported]…[**==IsUSE==**:5
+
 
 #### Self-RAG 训练
 
@@ -325,57 +392,7 @@ stop
 ```
 SELF-RAG训练
 
-###### 生成模型的训练语料示例
 
->Input: Identify the two types of computer memory. (from gpt4_alpaca)
-Output:  [**==Retrieve==**=Yes] &lt;p&gt; Computer memory Computer memory – In computing, memory refers to the computer hardware integrated circuits that store information for immediate use in a computer; it is synonymous with the term “primary storage”. Computer memory operates at a high speed, for example random-access memory (RAM), as a distinction from storage that provides slow-to-access information but offers higher capacities. If needed, contents of the computer memory can be transferred to secondary storage; a very common way of doing this is through a memory management technique called “virtual memory”. An archaic synonym for memory is store. The term “memory”, meaning “primary storage” or “main memory”, is&lt;p&gt;[ **==IsREL==**=Relevant]Primary memory, also known as main memory, is the memory that the computer can directly access and manipulate. [**==IsSUP==**=Fully Supported]  [**==Retrieve==**=Yes]&lt;p&gt;Computer memory–often associated with addressable semiconductor memory, i.e. integrated circuits consisting of silicon-based transistors, used for example as primary storage but also other purposes in computers and other digital electronic devices. There are two main kinds of semiconductor memory, volatile and non-volatile. Examples of non-volatile memory are flash memory (used as secondary memory) and ROM, PROM, EPROM and EEPROM memory (used for storing firmware such as BIOS). Examples of volatile memory are primary storage, which is typically dynamic random-access memory (DRAM), and fast CPU cache memory, which is typically static random-access memory (SRAM) that is fast but energy-consuming, offering lower memory&lt;p&gt;[ **==IsREL==** =Relevant]Primary memory can be accessed quickly, but it is volatile, meaning that the data is lost if the power is turned off.[**==IsSUP==** =Partially Supported]…[**==IsUSE==**:5
-
-
-
-#### Self-RAG执行效果
-
-```python
-# Import necessary libraries  
-from vllm import LLM, SamplingParams  
-  
-# Initialize the LLM (Large Language Model) with the specified model and data type  
-model = LLM("selfrag/selfrag_llama2_7b", dtype="half")  
-  
-# Define sampling parameters for text generation  
-sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=100, skip_special_tokens=False)  
-  
-# Define a function to format prompts, including an instruction and an optional paragraph for retrieval  
-def format_prompt(input, paragraph=None):  
-prompt = "### Instruction:\n{0}\n\n### Response:\n".format(input)  
-if paragraph is not None:  
-prompt += "[Retrieval]<paragraph>{0}</paragraph>".format(paragraph)  
-return prompt  
-  
-# Define two queries for the model to generate responses for  
-query_1 = "Leave odd one out: twitter, instagram, whatsapp."  
-query_2 = "Can you tell me the difference between llamas and alpacas?"  
-queries = [query_1, query_2]  
-  
-# Generate responses for the queries  
-preds = model.generate([format_prompt(query) for query in queries], sampling_params)  
-  
-# Print the model's predictions for each query  
-for pred in preds:  
-print("\n\nModel prediction: {0}".format(pred.outputs[0].text))
-```
-执行结果如下：
-![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240511104954.png)
-执行了两个查询，在第一个查询中，Self-RAG 直接生成响应而不检索信息，因为这是不必要的。在第二个查询中，Self-RAG 显示 [Retrieve] 标记，因为问题需要更多事实信息。
-
-```python
-# for a query that needs factual grounding
-prompt = format_prompt("Can you tell me the difference between llamas and alpacas?", "The alpaca (Lama pacos) is a species of South American camelid mammal. It is similar to, and often confused with, the llama. Alpacas are considerably smaller than llamas, and unlike llamas, they were not bred to be working animals, but were bred specifically for their fiber.")
-preds = model.generate([prompt], sampling_params)
-print([pred.outputs[0].text for pred in preds])
-# ['[Relevant]Alpacas are considerably smaller than llamas, and unlike llamas, they were not bred to be working animals, but were bred specifically for their fiber.[Fully supported][Utility:5]</s>']
-```
-
-![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240511105258.png)
 
 
 
@@ -441,7 +458,6 @@ response = query_engine.query("How tall is the smallest penguins?")
 ```
 
 所以其中的重点是 `SelfRAGQueryEngine` 这个自定义类的`query`方法的实现逻辑
-
 
 
 参考文档
