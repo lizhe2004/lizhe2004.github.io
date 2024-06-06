@@ -5,7 +5,7 @@ toc: true
 date: 2024-06-06
 tags: [大模型应用开发日报,开源项目,RAG,uptrain,pipecat,godaddy,linkedin]
 categories: [大模型应用开发日报]
-description:介绍了大模型开源工具julep、instructor、Qmedia、uptrain、pipecat、RAGApp等，分享了godaddy、linkedin等公司大模型应用开发的经验，提供了一个提示词注入攻击的介绍视频，最后介绍了传统程序员学习大模型的切入点、路径和侧重点。
+description: 介绍了大模型开源工具julep、instructor、Qmedia、uptrain、pipecat、RAGApp等，分享了godaddy、linkedin等公司大模型应用开发的经验，提供了一个提示词注入攻击的介绍视频，最后介绍了传统程序员学习大模型的切入点、路径和侧重点。
 banner: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/00bfd9a1baf8fa4d8d16006437f427a7827f6b925a40c93202187a6bead01d9a.jpg
 cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/00bfd9a1baf8fa4d8d16006437f427a7827f6b925a40c93202187a6bead01d9a.jpg
 ---
