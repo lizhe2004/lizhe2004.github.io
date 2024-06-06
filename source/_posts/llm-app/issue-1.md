@@ -1,6 +1,7 @@
 ---
 topic: llm-app # 这是项目id，对应 /data/wiki/hexo-stellar.yml
 title: 大模型应用开发日报-2024-06-06
+menu_id: topic
 toc: true
 date: 2024-06-06
 tags: [大模型应用开发日报,开源项目,RAG,uptrain,pipecat,godaddy,linkedin]
@@ -117,7 +118,7 @@ assistant.print_response("Whats happening in France?", markdown=True)
 [使用大语言模型 (LLMs) 构建产品一年后的经验总结 (第一部分) [译]](https://baoyu.io/translations/llm/what-we-learned-from-a-year-of-building-with-llms-part-1)
 > 详细分享了使用大语言模型（LLMs）构建产品一年来的经验和最佳实践，涵盖提示设计、信息检索、工作流调整和评估监控等方面。
 > - **提示设计至关重要**：提示设计是构建 LLMs 产品的关键步骤，需要平衡正确的技术使用和工程工作量。提示词应该简洁而专注，避免过度复杂化。
-- **输入输出结构化**：结构化的输入和输出可以帮助模型更好地理解和处理信息，提高与下游系统的集成效率。
+> - **输入输出结构化**：结构化的输入和输出可以帮助模型更好地理解和处理信息，提高与下游系统的集成效率。
 > - **检索增强生成（RAG）的作用**：RAG 是一种有效的方法，可以提供知识作为提示的一部分，提高 LLMs 在特定任务上的表现。
 > - **RAG 优于微调**：文章中提到的研究表明，RAG 在提供新知识和改进输出方面优于微调，并且具有实际优势，如更容易更新检索索引。
 > - **长上下文模型不会取代 RAG**：尽管长上下文模型提供了更大的上下文窗口，但 RAG 仍然有其独特的应用场景和优势。
@@ -142,7 +143,7 @@ assistant.print_response("Whats happening in France?", markdown=True)
 > - **测试至关重要。** GoDaddy 强调测试 LLMs 集成的重要性，并建议建立报告系统以便 QA 团队进行审查。
 
 [linkedin构建生成式人工智能产品的思考](https://www.linkedin.com/blog/engineering/generative-ai/musings-on-building-a-generative-ai-product)
-使用小模型用于将用户问题进行路由，决定查询是否在范围内，然后转发给不同AI agent 来回答。使用大模型用在最后生成回答
+>使用小模型用于将用户问题进行路由，决定查询是否在范围内，然后转发给不同AI agent 来回答。使用大模型用在最后生成回答
  有负责整体体验、评估、基础设施、UI 框架的开发团队，也有垂直负责不同Agent 场景的开发团队
  评估答案的品质比想像中更困难，目前先在内部建立了人工标注流程来获得品质指标(一天500则对话纪录)，之后想要建立自动化评估机制
   选择用YAML 来串接工具，因为比JSON 消耗更少tokens

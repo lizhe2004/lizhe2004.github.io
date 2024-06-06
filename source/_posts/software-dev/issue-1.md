@@ -2,6 +2,7 @@
 topic: software-dev # 这是项目id，对应 /data/wiki/hexo-stellar.yml
 title: 程序员日报-2024-06-06
 toc: true
+menu_id: topic
 date: 2024-06-06
 tags: [程序员日报,职业发展,VUE-Flow,开源项目]
 categories: [程序员日报]
