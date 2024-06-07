@@ -21,3 +21,6 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0f7bcefd4576c6
 
 
 ## 扩展阅读
+[系统设计面试中的9打数据通信软件架构模式【英文版】](https://webcache.googleusercontent.com/search?q=cache:https://medium.com/javarevisited/9-software-architecture-patterns-for-system-design-interviews-d76793592903)
+通信模式包括：P2P模式、API网关模式、发布订阅模式、请求响应模式、事件溯源模式、ETL模式批处理模式、流处理模式、编排模式。
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/1_3semWBqAx9HvcIQFkrCK2A.gif)
