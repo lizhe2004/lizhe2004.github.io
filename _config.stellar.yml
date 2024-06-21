@@ -58,3 +58,9 @@ article:
   related_posts:
     enable: true
     title: 您可能感兴趣的文章
+
+
+comments:
+  service: twikoo
+  twikoo:
+    envId: https://comment.lidaxia.io # vercel函数
