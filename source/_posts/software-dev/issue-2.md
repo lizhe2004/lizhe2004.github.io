@@ -38,7 +38,31 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0f7bcefd4576c6
 >* 支持发送图片（仅 Apprise）
 >* 支持多通知渠道和分组配置
 >* 支持 Serverless 部署，几乎零成本运行
+[系统设计入门（英文版）](https://github.com/donnemartin/system-design-primer)
+    - [中文版](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
+> 系统设计是一个很宽泛的话题。在互联网上，关于系统设计原则的资源也是多如牛毛。这个仓库就是这些资源的组织收集，它可以帮助你学习如何构建可扩展的系统。
+> ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240626191544.png)
 
+[awesome-software-architecture](https://github.com/mehdihadeli/awesome-software-architecture)
+> 用于学习和实践软件架构、模式和原理的精选文章、视频和其他资源
+> [浏览网站 链接](https://awesome-architecture.com/)
+
+[quick-waitlist](https://github.com/raqibnur/quick-waitlist)
+>Quick Waitlist 是一个面向 SaaS 平台和网站的开源“产品即将发布”和加入候选名单页面。该项目使您能够轻松收集潜在客户的电子邮件地址。 Quick Waitlist 使用 Next.js 14 构建，并与用于电子邮件管理的 Resend 集成，提供了用户友好且经过 SEO 优化的解决方案，可用于提前评估验证产品或功能的可行性、提前发现潜在客户、促进任何产品或服务的发布。
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240626191502.png)
+
+[IPQuality](https://github.com/xykt/IPQuality)
+>IP质量体检脚本支持Ubuntu 、Debian、Red Hat Enterprise Linux (RHEL) 、CentOS 、macOS等多种操作系统
+> - 中英文双语言支持
+> - 支持IPv4/IPv6双栈查询
+> - 精美排版，直观显示，多终端单屏优化展示，便于截图分享
+> - 基础信息、IP类型、风险评分、风险因子、流媒体解锁、邮局检测六大模块
+> - 基础数据源自Maxmind数据库
+> - 风险信息 IPinfo / ipregistry / ipapi / AbuseIPDB / IP2LOCATION / IPQS / DB-IP / SCAMALYTICS / IPWHOIS 多数据库整合
+> - 流媒体及AI多个服务商 TikTok / Disney+ / Netflix / Youtube / AmazonPrimeVideo / Spotify / ChatGPT 解锁及解锁类型检测
+> - 多邮局服务商 Gmail / Outlook / Yahoo / Apple / QQ / Mail.ru / AOL / GMX / Mail.com / 163 / Sohu / Sina 连通性检测
+> - IP地址黑名单400+数据库检测
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240626191644.png)
 
 ## 扩展阅读
 [系统设计面试中的9打数据通信软件架构模式【英文版】](https://webcache.googleusercontent.com/search?q=cache:https://medium.com/javarevisited/9-software-architecture-patterns-for-system-design-interviews-d76793592903)

@@ -34,6 +34,11 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0c8bef0cc992ec
 
 [AntiFraudChatBot](https://github.com/Turing-Project/AntiFraudChatBot)
 >AntiFraudChatBot是基于大规模预训练中文模型、语义识别与检测、对话意图等技术所构建的生成式对话QA框架，目前第一版模型针对反诈骗的场景化任务，对比传统的BertQA模型或non-prompt模型，在真实测试中AI对话的流畅度有明显提高。
+
+[RTranslator](https://github.com/niedev/RTranslator)
+>RTranslator 是一款（几乎）开源、免费、离线的 Android 实时翻译应用程序。有对话模式、对讲机模式、翻译模式等。
+![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240626192327.png)
+
 ## 技术介绍
 
 [REWOO框架Reasoning without Observation](https://arxiv.org/abs/2305.18323)
