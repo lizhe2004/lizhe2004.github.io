@@ -39,6 +39,9 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0c8bef0cc992ec
 >RTranslator 是一款（几乎）开源、免费、离线的 Android 实时翻译应用程序。有对话模式、对讲机模式、翻译模式等。
 ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240626192327.png)
 
+[Building optimized RAG with LlamaIndex + DSPy](https://github.com/stanfordnlp/dspy/blob/main/examples/llamaindex/dspy_llamaindex_rag.ipynb)
+> 详细介绍了Llamaindex与DSPY集成的使用方法。
+
 ## 技术介绍
 
 [REWOO框架Reasoning without Observation](https://arxiv.org/abs/2305.18323)
