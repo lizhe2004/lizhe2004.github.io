@@ -20,13 +20,11 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0f7bcefd4576c6
 >- 与断路器模式结合使用：重试模式与断路器机制相结合，可以防止对失败服务的重复调用。当达到一定失败次数后，断路器会打开，暂时阻止进一步的请求，从而给予服务恢复的时间。
 
 ## 高效工具
-
+[cursor-AI加持的代码编辑器](https://www.cursor.com/)
 
 
 [下载狗](https://www.xiazaitool.com/)
 >下载狗 - 免费无水印视频下载器   支持全网100+主流网站
-
- 
 ## 开源项目 
 
 [spring-reading](https://github.com/xuchengsheng/spring-reading)
@@ -45,6 +43,30 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/0f7bcefd4576c6
 >- 📝 海棠诗社按选集、主题、节日、节气、词牌、时令、地理等方式精选分类
 >- 🔍 海棠诗社全站响应式布局，兼容移动端，支持暗黑模式，响应速度快
 >![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240823172032.png)
+
+
+[favicon-downloader](https://github.com/seadfeng/favicon-downloader)
+>FaviconExtractor 是一款功能强大的免费在线工具，可让您立即从任何网站检查和下载网站图标。支持从 16x16 到 512x512 的多种尺寸，可确保获得满足项目需求的完美图标。可以部署到CloudFlare上。并且提供了获取图标的API。
+需要说明的是，该应用的界面被其他人发现抄袭了[https://www.redirectcheck.org/](https://www.redirectcheck.org/)
+
+[pic-smaller](https://github.com/joye61/pic-smaller)
+> 一个超级易于使用的在线图像压缩工具。它直观、移动友好,并支持压缩配置。同时,由于纯本地压缩没有任何服务器端逻辑,它是完全安全的。
+> [Demo](https://picsmaller.com/)
+
+[cursor.directory](https://github.com/pontusab/cursor.directory)
+>cursor.directory 是一个开源项目,旨在帮助开发者找到最适合自己框架和语言的cursor(一款AI加持的开发IDE)编码规则。该项目提供了一个简单易用的界面,让开发者可以轻松地提交新的cursor规则。
+在项目的根目录中复制并添加 .cursorrules 文件。
+.cursorrules 文件中的说明将包含针对cursor chat和 Ctrl/⌘ K 等功能的说明。
+
+[continue](https://github.com/continuedev/continue)
+>Continue 是一个领先的开源 AI 代码助手。您可以连接任何模型和任何上下文,在 VS Code 和 JetBrains 中构建自定义代码自动完成和聊天体验。
+主要功能点
+>- 轻松理解代码段
+>- 使用 tab 自动完成代码建议
+>- 在您正在编码的地方重构函数
+>- 询问有关代码库的问题
+>- 快速使用文档作为上下文
+
 
 ## 扩展阅读
 ### 企业技术博客推荐

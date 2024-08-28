@@ -42,17 +42,17 @@ search:
 footer:
   social:
     github:
-      icon: '<img src="https://api.iconify.design/octicon:mark-github-24.svg"/>'
-      url: https://
+      icon: '<img src="/static/images/github.svg"/>'
+      url: https://github.com/lizhe2004
     music:
-      icon: '<img src="https://www.svgrepo.com/show/299491/weibo.svg"/>'
-      url: https://
+      icon: '<img src="/static/images/weibo.svg"/>'
+      url: https://www.weibo.com/u/1168427155
     unsplash:
-      icon: '<img src="https://www.svgrepo.com/show/349560/wechat.svg"/>'
-      url: https://
-    comments:
-      icon: '<img src="" />'
-      url: https://
+      icon: '<img src="/static/images/wechat.svg"/>'
+      url: https://www.weibo.com/u/1168427155
+  content: | # 支持 Markdown 格式
+    本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备15005541号-3</a>
 article:
   # npm i hexo-related-popular-posts
   related_posts:

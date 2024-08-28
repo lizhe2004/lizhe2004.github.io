@@ -71,6 +71,28 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/ec648ab7259325
 >本项目旨在通过构建李白知识图谱，结合大模型训练出专业的AI智能体，以生成式对话应用的形式，推动李白文化的普及与推广。
 > 遗憾的是很多资料文档数据并未提供，导致本项目无法进行实际应用。只能作为研究学习使用。
 
+[表情语义检索](https://github.com/lilianweng/emoji-semantic-search)
+> [Demo](https://www.emojisearch.app/)
+> ![](https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/20240823173133.png)
+> Emoji 数据 (主要是 Unicode 数据) 整理收集，主要参考了 Unicode® Technical Standard #51 / UNICODE EMOJI  (http://unicode.org/reports/tr51/#Major_Sourcesyanfa2024) 中对 Emoji 的数据定义和范围列表，存储于：server/data/emoji-data.txt
+> Emoji 数据通过 Embedding 模型形成向量数据，模型采用的是 OpenAI / text-embedding-ada-002
+
+[crawl4ai](https://github.com/unclecode/crawl4ai)
+>是一个开源 Python 库，简化了网络爬虫和数据提取，使其适用于 LLMs和 AI 应用
+>完全免费且开源 
+>🤖 适合 LLM 的输出格式（JSON、HTML、Markdown） 🌍 支持同时爬取多个 URL 
+>🎨 提取并返回所有媒体标签（图片、音频和视频） 
+>🔗 提取所有外部和内部链接 
+>📚 提取页面的元数据 
+>🔄 支持自定义钩子进行身份验证、设置头部信息以及在爬取前修改页面 
+>🕵️ 用户代理 (User-agent) 自定义 
+>🖼️ 截取页面屏幕截图 
+>📜 在爬取前执行多个自定义 JavaScript 脚本 
+>📚 各种分块策略：基于主题的、正则表达式的、句子分割等 
+>🧠 高级提取策略：余弦聚类、LLM 等 
+>🎯 支持 CSS 选择器 
+>📝 传递指令/关键词以优化提取过程
+
 ## 技术介绍
 [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)
 - 一年多前的老文重温。
@@ -162,5 +184,4 @@ GraphRAG与llamaindex的结合
 
 [How to Build Your Career in AI](/static/doc/eBook-How-to-Build-a-Career-in-AI.pdf)
 >Deeplearning 出品，整理了吴恩达老师对 AI 的关键洞察，尤其是如何在 AI 方向学习和工作，开篇是吴恩达老师很著名的一句话：
-
 "AI is the new electricity. It will transform and improve all areas of human life." - Andrew Ng
