@@ -1,7 +1,7 @@
 ---
-title: 各大云服务提供商的embedding服务列表
+title: 各大云服务提供商的embedding服务列表（最新更新：2024年8月28日）
 toc: true
-date: 2024-05-16
+date: 2024-08-29
 tags: [大模型,免费,API]
 categories: [人工智能]
 description: 一篇文章让你了解目前所有的各大云服务提供商的embedding服务列表，方便大家快速选型

@@ -1,7 +1,7 @@
 ---
-title: 免费的大模型API清单
+title: 免费的大模型API清单（最新更新：2024年8月28日）
 toc: true
-date: 2024-05-16
+date: 2024-08-28
 tags: [大模型,免费,API]
 categories: [人工智能]
 description: 一篇文章让你了解目前所有的国产免费API服务，方便大家低成本运行demo和企业初创

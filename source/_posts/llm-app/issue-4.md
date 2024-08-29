@@ -1,6 +1,6 @@
 ---
 topic: llm-app # 这是项目id，对应 /data/wiki/hexo-stellar.yml
-title: 大模型应用开发日报-2024-08-12
+title: 大模型应用开发日报-2024-08-29
 toc: true
 menu_id: topic
 date: 2024-08-22
