@@ -14,7 +14,6 @@ leftbar:
   - related
   - tagcloud
 rightbar:
-  - ghuser
   - toc
 ---
 ## 介绍

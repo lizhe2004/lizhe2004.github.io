@@ -39,7 +39,6 @@ cover: https://cdn.jsdelivr.net/gh/lizhe2004/pic-repo@master/imgs/ec648ab7259325
 >- 多样化的生成器支持:兼容70B+模型、VLLM和量化技术。
 >- 灵活的指令实验室:可定制的指令模板,适用于各种RAG场景。
 
-## 技术介绍
 
 ## 扩展阅读
 - [论文：Graph Retrieval-Augmented Generation: A Survey](https://arxiv.org/pdf/2408.08921)
