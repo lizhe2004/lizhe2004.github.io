@@ -21,7 +21,7 @@ rightbar:
 ### **1\. 景别**
 
 
-{% grid %}
+{% grid  c:4 %}
 <!-- cell -->
 特写
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902496.jpeg %}
@@ -55,7 +55,7 @@ rightbar:
 ### **2\. 视角**
 
 
-{% grid  %}
+{% grid c:4 %}
 <!-- cell -->
 平视
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902548.png %}
@@ -83,12 +83,18 @@ rightbar:
 
 ### **3\. 镜头拍摄类型**
 
+
+{% grid c:1 %}
+<!-- cell -->
 | **镜头类型**| **提示词示例**| **图像效果**|
 |---|---|---|
 | **微距**| 微距镜头，cherries, carbonated water, macro, professional color grading, clean sharp focus, commercial high quality, magazine winning photography, hyper realistic, uhd, 8K| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902553.png)|
 | **超广角**| 超广角镜头，碧海蓝天下的海岛，阳光透过树叶缝隙，洒下斑驳光影。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902556.png)|
 | **长焦**| 长焦镜头，展示长焦镜头下，一只猎豹在郁郁葱葱的森林中站立，面对镜头，背景被巧妙地虚化，猎豹的面部成为画面的绝对焦点。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902555.png)|
 | **鱼眼**| 鱼眼镜头，展示在鱼眼镜头的特殊视角下，一位女性站立着并直视镜头的场景。她的形象在画面中心被夸张地放大，四周则呈现出强烈的扭曲效果。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902554.png)|
+
+{% endgrid %}
+
 
 ### **4\. 风格**
 
