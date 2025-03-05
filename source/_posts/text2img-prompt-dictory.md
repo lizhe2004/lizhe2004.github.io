@@ -27,6 +27,42 @@ rightbar:
 | **中景**| 中景镜头，电影时尚魅力摄影，年轻亚洲女子，中国苗族女孩，圆脸，看着镜头，民族深色优雅的服装，中广角镜头，阳光明媚，乌托邦式，由高清相机拍摄| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902498.png)|
 | **远景**| 远景镜头，在壮丽的雪山背景下，两个小小的人影站在远处山顶，背对着镜头，静静地观赏着日落的美景。夕阳的余晖洒在雪山上，呈现出一片金黄色的光辉，与蔚蓝的天空形成鲜明对比。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902495.png)|
 
+
+特写
+{% grid %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902496.jpeg %}
+<!-- cell -->
+特写镜头，高清相机，情绪大片，日落，特写人像
+{% endgrid %}
+
+近景
+{% grid %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902497.png %}
+<!-- cell -->
+近景镜头，18岁的中国女孩，古代服饰，圆脸，看着镜头，民族优雅的服装，商业摄影，室外，电影级光照，半身特写，精致的淡妆，锐利的边缘|
+{% endgrid %}
+
+中景
+{% grid %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902498.png %}
+<!-- cell -->
+中景镜头，电影时尚魅力摄影，年轻亚洲女子，中国苗族女孩，圆脸，看着镜头，民族深色优雅的服装，中广角镜头，阳光明媚，乌托邦式，由高清相机拍摄
+{% endgrid %}
+
+远景
+{% grid %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902495.png %}
+<!-- cell -->
+远景镜头，在壮丽的雪山背景下，两个小小的人影站在远处山顶，背对着镜头，静静地观赏着日落的美景。夕阳的余晖洒在雪山上，呈现出一片金黄色的光辉，与蔚蓝的天空形成鲜明对比。
+{% endgrid %}
+
+
+
+
 ### **2\. 视角**
 
 | **视角类型**| **提示词示例**| **图像效果**|
