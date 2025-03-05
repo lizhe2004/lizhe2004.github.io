@@ -20,43 +20,32 @@ rightbar:
 
 ### **1\. 景别**
 
-| **景别类型**| **提示词示例**| **图像效果**|
-|---|---|---|
-| **特写**| 特写镜头，高清相机，情绪大片，日落，特写人像| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902496.jpeg)|
-| **近景**| 近景镜头，18岁的中国女孩，古代服饰，圆脸，看着镜头，民族优雅的服装，商业摄影，室外，电影级光照，半身特写，精致的淡妆，锐利的边缘| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902497.png)|
-| **中景**| 中景镜头，电影时尚魅力摄影，年轻亚洲女子，中国苗族女孩，圆脸，看着镜头，民族深色优雅的服装，中广角镜头，阳光明媚，乌托邦式，由高清相机拍摄| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902498.png)|
-| **远景**| 远景镜头，在壮丽的雪山背景下，两个小小的人影站在远处山顶，背对着镜头，静静地观赏着日落的美景。夕阳的余晖洒在雪山上，呈现出一片金黄色的光辉，与蔚蓝的天空形成鲜明对比。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902495.png)|
 
-
-特写
 {% grid %}
 <!-- cell -->
+特写
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902496.jpeg %}
-<!-- cell -->
 特写镜头，高清相机，情绪大片，日落，特写人像
-{% endgrid %}
+<!-- cell -->
+
 
 近景
-{% grid %}
-<!-- cell -->
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902497.png %}
+近景镜头，18岁的中国女孩，古代服饰，圆脸，看着镜头，民族优雅的服装，商业摄影，室外，电影级光照，半身特写，精致的淡妆，锐利的边缘
 <!-- cell -->
-近景镜头，18岁的中国女孩，古代服饰，圆脸，看着镜头，民族优雅的服装，商业摄影，室外，电影级光照，半身特写，精致的淡妆，锐利的边缘|
-{% endgrid %}
+
 
 中景
-{% grid %}
-<!-- cell -->
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902498.png %}
-<!-- cell -->
-中景镜头，电影时尚魅力摄影，年轻亚洲女子，中国苗族女孩，圆脸，看着镜头，民族深色优雅的服装，中广角镜头，阳光明媚，乌托邦式，由高清相机拍摄
-{% endgrid %}
 
+中景镜头，电影时尚魅力摄影，年轻亚洲女子，中国苗族女孩，圆脸，看着镜头，民族深色优雅的服装，中广角镜头，阳光明媚，乌托邦式，由高清相机拍摄
+
+
+
+<!-- cell -->
 远景
-{% grid %}
-<!-- cell -->
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902495.png %}
-<!-- cell -->
+
 远景镜头，在壮丽的雪山背景下，两个小小的人影站在远处山顶，背对着镜头，静静地观赏着日落的美景。夕阳的余晖洒在雪山上，呈现出一片金黄色的光辉，与蔚蓝的天空形成鲜明对比。
 {% endgrid %}
 
@@ -65,45 +54,30 @@ rightbar:
 
 ### **2\. 视角**
 
-| **视角类型**| **提示词示例**| **图像效果**|
-|---|---|---|
-| **平视**| 平视视角，图像展示了从平视视角捕捉到的草地景象，一群羊悠闲地在绿茵茵的草地上低头觅食，它们的羊毛在早晨微弱的阳光照耀下呈现出温暖的金色光泽，形成美丽的光影效果。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902548.png)|
-| **俯视**| 俯视视角，我从空中俯瞰冰湖，中心有一艘小船，周围环绕着漩涡图案和充满活力的蓝色海水。螺旋深渊，该场景是从上方以自上而下的视角拍摄的，展示了复杂的细节，例如表面的波纹和积雪覆盖的地面下的层。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902550.png)|
-| **仰视**| 仰视视角，展示热带地区的壮观景象，高大的椰子树如同参天巨人般耸立，枝叶茂盛，直指蓝天。镜头采用仰视视角，让观众仿佛置身树下，感受大自然的雄伟与生机。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902549.png)|
-| **航拍**| 航拍视角，展示大雪，村庄，道路，灯火，树木。航拍视角，逼真效果。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902547.png)|
 
-
+{% grid  %}
+<!-- cell -->
 平视
-{% grid c:3 %}
-<!-- cell -->
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902548.png %}
-<!-- cell -->
 平视视角，图像展示了从平视视角捕捉到的草地景象，一群羊悠闲地在绿茵茵的草地上低头觅食，它们的羊毛在早晨微弱的阳光照耀下呈现出温暖的金色光泽，形成美丽的光影效果。
-{% endgrid %}
+<!-- cell -->
+
 
 俯视
-{% grid c:4 %}
-<!-- cell -->
-{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902549.png %}
-<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902550.png %}
 俯视视角，我从空中俯瞰冰湖，中心有一艘小船，周围环绕着漩涡图案和充满活力的蓝色海水。螺旋深渊，该场景是从上方以自上而下的视角拍摄的，展示了复杂的细节，例如表面的波纹和积雪覆盖的地面下的层。
-{% endgrid %}
-
+<!-- cell -->
 
 仰视
-{% grid c:5 %}
-<!-- cell -->
-{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902550.png %}
-<!-- cell -->
+{% image  https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902549.png %}
 仰视视角，展示热带地区的壮观景象，高大的椰子树如同参天巨人般耸立，枝叶茂盛，直指蓝天。镜头采用仰视视角，让观众仿佛置身树下，感受大自然的雄伟与生机。
-{% endgrid %}
+<!-- cell -->
 
 航拍
-{% grid c:6 %}
-<!-- cell -->
 {% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902547.png %}
-<!-- cell -->
 航拍视角，展示大雪，村庄，道路，灯火，树木。航拍视角，逼真效果。
+
+
 {% endgrid %}
 
 
