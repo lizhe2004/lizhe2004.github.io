@@ -72,6 +72,41 @@ rightbar:
 | **仰视**| 仰视视角，展示热带地区的壮观景象，高大的椰子树如同参天巨人般耸立，枝叶茂盛，直指蓝天。镜头采用仰视视角，让观众仿佛置身树下，感受大自然的雄伟与生机。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902549.png)|
 | **航拍**| 航拍视角，展示大雪，村庄，道路，灯火，树木。航拍视角，逼真效果。| ![img](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902547.png)|
 
+
+平视
+{% grid c:3 %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902548.png %}
+<!-- cell -->
+平视视角，图像展示了从平视视角捕捉到的草地景象，一群羊悠闲地在绿茵茵的草地上低头觅食，它们的羊毛在早晨微弱的阳光照耀下呈现出温暖的金色光泽，形成美丽的光影效果。
+{% endgrid %}
+
+俯视
+{% grid c:4 %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902549.png %}
+<!-- cell -->
+俯视视角，我从空中俯瞰冰湖，中心有一艘小船，周围环绕着漩涡图案和充满活力的蓝色海水。螺旋深渊，该场景是从上方以自上而下的视角拍摄的，展示了复杂的细节，例如表面的波纹和积雪覆盖的地面下的层。
+{% endgrid %}
+
+
+仰视
+{% grid c:5 %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902550.png %}
+<!-- cell -->
+仰视视角，展示热带地区的壮观景象，高大的椰子树如同参天巨人般耸立，枝叶茂盛，直指蓝天。镜头采用仰视视角，让观众仿佛置身树下，感受大自然的雄伟与生机。
+{% endgrid %}
+
+航拍
+{% grid c:6 %}
+<!-- cell -->
+{% image https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5838246371/p902547.png %}
+<!-- cell -->
+航拍视角，展示大雪，村庄，道路，灯火，树木。航拍视角，逼真效果。
+{% endgrid %}
+
+
 ### **3\. 镜头拍摄类型**
 
 | **镜头类型**| **提示词示例**| **图像效果**|
