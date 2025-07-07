@@ -1,10 +1,10 @@
 ---
-title: 上下文工程——概念解析与实践技巧 
+title: 上下文工程——概念解析与实践技巧（翻译自llamaindex博客）
 toc: true
 date: 2025-07-04
 tags: [Context Engineering,大模型,Agent,智能体]
 categories: [人工智能]
-description: llamaindex 关于Context Engineering的理解和介绍
+description: llamaindex 关于Context Engineering的理解和介绍，主要包括上下文工程的定义、构成要素以及技术策略
 banner: https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250704175325.png
 cover: https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250704175325.png
 author: 李大侠
@@ -17,7 +17,7 @@ rightbar:
   - toc
 ---
 ## 前言
-尽管"上下文工程"（Context Engineering）背后的原理并不新鲜并非全新概念（译者注：所以也有很多人对这个新名词嗤之以鼻，觉得是炒作，不过回顾历史，所有新技术新思想都不是无根之木，都是站在先前的技术之上的），但这个术语是一个有用的抽象概念，它能帮助我们思考在构建高效的AI智能体时所满脸林的最紧迫的挑战。因此，我们来分解一下。本文将涵盖三个方面的内容：上下文工程的定义、它与"提示工程"的区别，以及如何运用LlamaIndex和LlamaCloud来设计符合上下文工程原则的智能体系统。
+尽管"上下文工程"（Context Engineering）背后的原理并不新鲜并非全新概念（译者注：所以也有很多人对这个新名词嗤之以鼻，觉得是炒作，不过回顾历史，所有新技术新思想都不是无根之木，都是站在先前的技术之上的），但这个术语是一个有用的抽象概念，它能帮助我们思考在构建高效的AI智能体时所面临的最紧迫的挑战。因此，我们来分解一下。本文将涵盖三个方面的内容：上下文工程的定义、它与"提示工程"的区别，以及如何运用LlamaIndex和LlamaCloud来设计符合上下文工程原则的智能体系统。
 
 ## ​​什么是上下文工程？​​
 AI智能体需要获取与任务相关的上下文才能合理地执行任务。虽然这一点我们早就知道了，但在AI技术快速迭代的背景下，我们需要不断提出新的抽象概念来让我们能够用一种易于理解的名词来思考最佳实践和新方法。正如Andrey Karpathy（译者注：OpenAI前科学家）的精辟总结：
