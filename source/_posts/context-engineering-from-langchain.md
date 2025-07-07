@@ -18,17 +18,17 @@ rightbar:
 ---
 ## 前言
 
-智能体（Agents）需要上下文（Context）来执行任务。上下文工程学是一门艺术与科学，其核心在于在每个智能体运行轨迹（trajectory）的每一步，将最恰当的信息填充进上下文窗口（Context Window）。在这篇文章中，我们通过回顾各种流行的智能体和论文，分解了上下文工程的一些常见策略 —— 写入（write）、选择（select）、压缩（compress）和隔离（isolate）。然后，我们解释了 LangGraph 是如何设计来支持它们的！此外，也可以在这里观看我们关于上下文工程的[视频](https://youtu.be/example_link)，对应notion文档[链接](https://mirror-feeling-d80.notion.site/Context-Engineering-for-Agents-21f808527b17802db4b1c84a068a0976)。
+智能体（Agents）需要上下文（Context）来执行任务。上下文工程是一门艺术与科学，其核心在于在每个智能体运行轨迹（trajectory）的每一步，将最恰当的信息填充进上下文窗口（Context Window）。在这篇文章中，我们通过回顾各种流行的智能体和论文，分解了上下文工程的一些常见策略 —— 写入（write）、选择（select）、压缩（compress）和隔离（isolate）。然后，我们解释了 LangGraph 是如何设计来支持它们的！此外，也可以在这里观看我们关于上下文工程的[视频](https://youtu.be/example_link)，对应notion文档[链接](https://mirror-feeling-d80.notion.site/Context-Engineering-for-Agents-21f808527b17802db4b1c84a068a0976)。
 
 ![20250707093203](https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250707093203.png)
 
 
 ## 上下文工程 (Context Engineering)
 
-正如 Andrej Karpathy（译者注：OpenAI前科学家） 所言，大型语言模型（LLM）就像一种新型的操作系统。LLM 如同中央处理器（CPU），而其上下文窗口则像是随机存取存储器（RAM），充当模型的“工作内存”。就像 RAM 一样，LLM 的上下文窗口处理各种来源的上下文信息的能力是有限的。正如操作系统管理什么内容可以放入 CPU 的 RAM 中一样，我们可以将“上下文工程学”视为扮演着类似的角色。Karpathy 对此总结得很好：
+正如 Andrej Karpathy（译者注：OpenAI前科学家） 所言，大型语言模型（LLM）就像一种新型的操作系统。LLM 如同中央处理器（CPU），而其上下文窗口则像是随机存取存储器（RAM），充当模型的“工作内存”。就像 RAM 一样，LLM 的上下文窗口处理各种来源的上下文信息的能力是有限的。正如操作系统管理什么内容可以放入 CPU 的 RAM 中一样，我们可以将“上下文工程”视为扮演着类似的角色。Karpathy 对此总结得很好：
 > [Context engineering is the] ”…delicate art and science of filling the context window with just the right information for the next step.”
 
-> [上下文工程学是] “…一门精妙的艺术与科学，旨在为下一步操作将最合适的的信息填入上下文窗口。”
+> [上下文是] “…一门精妙的艺术与科学，旨在为下一步操作将最合适的的信息填入上下文窗口。”
 
 ![20250707095647](https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250707095647.png)
 
@@ -56,10 +56,10 @@ rightbar:
 ![20250707095722](https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250707095722.png)
      (图注：来自工具调用的上下文在多个智能体轮次中累积)
 
-考虑到这一点，Cognition（一家公司）强调了上下文工程学的重要性：
+考虑到这一点，Cognition（一家公司）强调了上下文工程的重要性：
  > “Context engineering” … is effectively the #1 job of engineers building AI agents. 
 
- > “上下文工程学” … 实际上是构建 AI 智能体的工程师的首要工作。
+ > “上下文工程” … 实际上是构建 AI 智能体的工程师的首要工作。
 
  Anthropic 也清晰地阐述了这一点：
 > Agents often engage in conversations spanning hundreds of turns, requiring careful context management strategies.
