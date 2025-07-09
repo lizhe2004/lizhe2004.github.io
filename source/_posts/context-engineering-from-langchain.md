@@ -1,7 +1,7 @@
 ---
 title: 上下文工程（翻译自langchain博客）
 toc: true
-date: 2025-07-04
+date: 2025-07-07
 tags: [Context Engineering,大模型,Agent,智能体]
 categories: [人工智能]
 description: langchain 关于Context Engineering的理解和介绍，主要包括上下文工程的定义、构成要素以及技术策略
@@ -65,7 +65,7 @@ rightbar:
  Anthropic 也清晰地阐述了这一点：
 > Agents often engage in conversations spanning hundreds of turns, requiring careful context management strategies.
 
-> 智能体通常参与跨越数百轮对话，需要谨慎的上下文管理策略。
+> 智能体通常参与跨越数百轮的对话，需要谨慎的上下文管理策略。
 
 那么，人们如今是如何应对这一挑战的呢？我们将当前常见的智能体上下文工程策略归纳为四大类 —— **写入（write）、选择（select）、压缩（compress）和隔离（isolate）**，并通过回顾一些流行的智能体产品和论文为每一类提供例证。然后，我们解释 LangGraph 是如何设计来支持它们的！
 ![20250707093203](https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250707093203.png)    
