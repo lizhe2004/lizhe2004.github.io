@@ -2,7 +2,7 @@
 title: 上下文工程（翻译自langchain博客）
 toc: true
 date: 2025-07-07
-tags: [Context Engineering,大模型,Agent,智能体]
+tags: [Context Engineering,上下文工程,大模型,Agent,智能体]
 categories: [人工智能]
 description: langchain 关于Context Engineering的理解和介绍，主要包括上下文工程的定义、构成要素以及技术策略
 banner: https://cdn.jsdmirror.com/gh/lizhe2004/pic-repo@master//imgs/20250707154223.png
