@@ -1,7 +1,7 @@
 ---
 title: 长上下文是怎么失败的？(译文)
 toc: true
-date: 2025-07-07
+date: 2025-07-16
 tags: [Context Engineering,上下文工程,长上下文,大模型,Agent,智能体]
 categories: [人工智能]
 description: langchain 关于Context Engineering的理解和介绍，主要包括上下文工程的定义、构成要素以及技术策略
